@@ -1,4 +1,4 @@
-object DataEngineeringPortfolio {
+object Ejemplos {
 
   // Función para contar palabras en un texto
   def contarPalabras(texto: String): Map[String, Int] = {
