@@ -30,13 +30,6 @@ object DataEngineeringPortfolio {
     else nums.sum / nums.length
   }
 
-  // Función para leer un archivo de texto y contar las palabras
-  import scala.io.Source
-  def contarPalabrasArchivo(rutaArchivo: String): Map[String, Int] = {
-    val texto = Source.fromFile(rutaArchivo).getLines().mkString(" ")
-    contarPalabras(texto)
-  }
-
   // Ejemplos de ejecución
   def main(args: Array[String]): Unit = {
     // Ejemplo 1: contarPalabras
@@ -62,13 +55,5 @@ object DataEngineeringPortfolio {
     val promedioLista = promedio(listaNumeros)
     println(s"El promedio de la lista de números es: $promedioLista")
 
-    // Ejemplo 5: contarPalabrasArchivo
-    // Asegúrate de proporcionar la ruta correcta del archivo
-    // val rutaArchivo = "ruta/a/tu/archivo.txt"
-    // val resultadoConteoArchivo = contarPalabrasArchivo(rutaArchivo)
-    // println("Conteo de palabras en el archivo:")
-    // resultadoConteoArchivo.foreach { case (palabra, conteo) =>
-    //   println(s"$palabra: $conteo")
-    // }
   }
 }
