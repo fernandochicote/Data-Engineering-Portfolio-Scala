@@ -7,14 +7,14 @@
 - Instalación y configuración del entorno de trabajo en Scala.
 - Introducción a SBT.
 - Fundamentos de la programación funcional en Scala.
+- Creación de funciones simples y avanzadas utilizando funciones de orden superior (HOF) y currying.
 
-## Semana 2: Introducción a la Programación en Spark con Scala
+### Ejemplos de Código
 
-### Actividades Destacadas
+- [Funciones simples en Scala](https://github.com/fernandochicote/Data-Engineering-Portfolio-Scala/blob/98d18dec5d1eb4373885dad21abccf72605fb75a/src/main/scala/SimpleFunctions.scala)
+- [Funcion avanzada de Scala](src/main/scala/AdvancedFunctions.scala)
 
-- Arquitectura de Spark.
-- Desarrollo en Spark con Scala y Python.
-- Uso de RDDs y DataFrames en Spark.
-- Spark SQL y operaciones avanzadas.
+
+
 
 
