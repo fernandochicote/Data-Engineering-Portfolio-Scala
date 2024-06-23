@@ -11,7 +11,7 @@
 
 ### Ejemplos de Código
 
-- [Funciones simples en Scala](https://github.com/fernandochicote/Data-Engineering-Portfolio-Scala/blob/98d18dec5d1eb4373885dad21abccf72605fb75a/src/main/scala/SimpleFunctions.scala)
+- [Funciones simples en Scala](src/main/scala/SimpleFunctions.scala)
 - [Funcion avanzada de Scala](src/main/scala/AdvancedFunctions.scala)
 
 
