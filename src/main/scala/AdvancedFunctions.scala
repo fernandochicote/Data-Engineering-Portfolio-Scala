@@ -1,9 +1,7 @@
 object AdvancedFunctions {
 
   // Funciones aritméticas básicas usando HOF y currying
-  def operar(a: Int, b: Int)(operacion: (Int, Int) => Int): Int = {
-    operacion(a, b)
-  }
+  def operar(a: Int, b: Int)(operacion: (Int, Int) => Int): Int = operacion(a, b)
 
   val sumar: (Int, Int) => Int = _ + _
   val restar: (Int, Int) => Int = _ - _

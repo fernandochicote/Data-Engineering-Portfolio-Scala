@@ -1,59 +1,34 @@
 object SimpleFunctions {
 
   // Funciones aritméticas básicas
-  def sumar(a: Int, b: Int): Int = {
-    a + b
-  }
+  def sumar(a: Int, b: Int): Int = a + b
 
-  def restar(a: Int, b: Int): Int = {
-    a - b
-  }
+  def restar(a: Int, b: Int): Int = a - b
 
-  def multiplicar(a: Int, b: Int): Int = {
-    a * b
-  }
+  def multiplicar(a: Int, b: Int): Int = a * b
 
-  def dividir(a: Int, b: Int): Option[Double] = {
-    if (b != 0) Some(a.toDouble / b)
-    else None
-  }
+  def dividir(a: Int, b: Int): Option[Double] = if (b != 0) Some(a.toDouble / b) else None
 
   // Función para invertir una cadena
-  def invertirCadena(cadena: String): String = {
-    cadena.reverse
-  }
+  def invertirCadena(cadena: String): String = cadena.reverse
 
   // Función para contar palabras en una cadena
-  def contarPalabras(cadena: String): Int = {
-    cadena.split("\\s+").length
-  }
+  def contarPalabras(cadena: String): Int = cadena.split("\\s+").length
 
   // Función para encontrar el mayor número en una lista
-  def mayorEnLista(lista: List[Int]): Option[Int] = {
-    if (lista.nonEmpty) Some(lista.max)
-    else None
-  }
+  def mayorEnLista(lista: List[Int]): Option[Int] = if (lista.nonEmpty) Some(lista.max) else None
 
   // Función para encontrar el menor número en una lista
-  def menorEnLista(lista: List[Int]): Option[Int] = {
-    if (lista.nonEmpty) Some(lista.min)
-    else None
-  }
+  def menorEnLista(lista: List[Int]): Option[Int] = if (lista.nonEmpty) Some(lista.min) else None
 
   // Función para sumar todos los elementos de una lista
-  def sumarLista(lista: List[Int]): Int = {
-    lista.sum
-  }
+  def sumarLista(lista: List[Int]): Int = lista.sum
 
   // Función para multiplicar todos los elementos de una lista
-  def multiplicarLista(lista: List[Int]): Int = {
-    lista.product
-  }
+  def multiplicarLista(lista: List[Int]): Int = lista.product
 
   // Función para verificar si una lista contiene un valor
-  def contiene(lista: List[Int], valor: Int): Boolean = {
-    lista.contains(valor)
-  }
+  def contiene(lista: List[Int], valor: Int): Boolean = lista.contains(valor)
 
   // Ejecución de pruebas simples para mostrar la funcionalidad
   def main(args: Array[String]): Unit = {
