@@ -30,7 +30,6 @@ object SimpleFunctions {
   // Función para verificar si una lista contiene un valor
   def contiene(lista: List[Int], valor: Int): Boolean = lista.contains(valor)
 
-  // Ejecución de pruebas simples para mostrar la funcionalidad
   def main(args: Array[String]): Unit = {
     println(s"Sumar 5 + 3: ${sumar(5, 3)}")
     println(s"Restar 10 - 4: ${restar(10, 4)}")

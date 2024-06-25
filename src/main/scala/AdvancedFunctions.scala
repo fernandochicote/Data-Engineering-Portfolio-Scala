@@ -7,7 +7,6 @@ object AdvancedFunctions {
   val restar: (Int, Int) => Int = _ - _
   val multiplicar: (Int, Int) => Int = _ * _
 
-  // Ejecución de pruebas simples para mostrar la funcionalidad
   def main(args: Array[String]): Unit = {
     println(s"Sumar 5 + 3: ${operar(5, 3)(sumar)}")
     println(s"Restar 10 - 4: ${operar(10, 4)(restar)}")

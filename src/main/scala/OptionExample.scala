@@ -1,9 +1,9 @@
-// La clase llamada Option que se usa para manejar valores que pueden ser opcionales
+// La clase llamada Option se usa para manejar valores que pueden ser opcionales
 // Un Option puede ser Some(valor) si el valor está presente, o None si el valor está ausente.
 
 object OptionExample {
   def main(args: Array[String]): Unit = {
-    val someValue: Option[Int] = Some(42)
+    val someValue: Option[String] = Some("Fernando")
     val noValue: Option[Int] = None
 
     // Imprimir los valores de Option
@@ -14,7 +14,7 @@ object OptionExample {
     val value1 = someValue.getOrElse(0)
     val value2 = noValue.getOrElse(0)
 
-    println(value1) // Output: 42
-    println(value2) // Output: 0
+    println(value1)
+    println(value2)
   }
 }
