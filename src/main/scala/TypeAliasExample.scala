@@ -2,20 +2,16 @@
 // Esto puede mejorar la claridad del código y hacer que los tipos complejos sean más fáciles de manejar
 
 object TypeAliasExample {
-  // Definiendo un alias de tipo
+  // Definicion del alias de tipo
   type StringList = List[String]
 
   def main(args: Array[String]): Unit = {
-    // Usando el alias de tipo
+
     val names: StringList = List("Alice", "Bob", "Charlie")
 
-    // Imprimiendo la lista de nombres
     println(names)
 
-    // Usando el alias de tipo en una función
-    def printNames(names: StringList): Unit = {
-      names.foreach(println)
-    }
+    def printNames(names: StringList): Unit = names.foreach(println)
 
     printNames(names)
   }
