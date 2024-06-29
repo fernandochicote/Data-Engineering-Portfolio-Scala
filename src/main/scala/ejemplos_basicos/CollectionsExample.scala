@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 //Las colecciones en Scala sirven para almacenar elementos de datos de manera estructurada
 //y permiten operaciones funcionales avanzadas
 

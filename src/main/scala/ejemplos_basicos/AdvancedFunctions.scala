@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 object AdvancedFunctions {
 
   // Funciones aritméticas básicas usando HOF y currying

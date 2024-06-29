@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 // La clase llamada Option se usa para manejar valores que pueden ser opcionales
 // Un Option puede ser Some(valor) si el valor está presente, o None si el valor está ausente.
 

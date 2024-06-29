@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 object SimpleFunctions {
 
   // Funciones aritméticas básicas

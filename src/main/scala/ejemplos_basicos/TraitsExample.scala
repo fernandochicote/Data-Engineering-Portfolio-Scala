@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 // Un trait en Scala sirve para definir comportamientos
 // y características que pueden ser compartidos por múltiples clases.
 

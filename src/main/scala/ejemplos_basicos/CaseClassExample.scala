@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 //Un case class en Scala sirve para definir de manera concisa
 // y fácilmente desestructurable una clase de datos inmutables
 

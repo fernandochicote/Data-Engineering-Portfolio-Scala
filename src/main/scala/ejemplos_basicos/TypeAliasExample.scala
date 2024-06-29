@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 // En Scala, puedes usar un alias de tipo (type alias) para dar un nombre más legible a un tipo existente.
 // Esto puede mejorar la claridad del código y hacer que los tipos complejos sean más fáciles de manejar
 

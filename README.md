@@ -15,14 +15,26 @@
 
 ### Ejemplos de Código
 
-- [Funciones simples en Scala](src/main/scala/SimpleFunctions.scala)
-- [Funcion avanzada de Scala](src/main/scala/AdvancedFunctions.scala)
-- [Ejemplos de Options](src/main/scala/OptionExample.scala)
-- [Ejemplos de Type Alias](src/main/scala/TypeAliasExample.scala)
-- [Ejemplos de Clases](src/main/scala/CaseClassExample.scala)
-- [Ejemplos de Colecciones](src/main/scala/CollectionsExample.scala)
-- [Ejemplos de tratamiento de errores](src/main/scala/ErrorsExample.scala)
-- [Ejemplos de Traits](src/main/scala/TraitsExample.scala)
+- [Funciones simples en Scala](src/main/scala/ejemplos_basicos/SimpleFunctions.scala)
+- [Funcion avanzada de Scala](src/main/scala/ejemplos_basicos/AdvancedFunctions.scala)
+- [Ejemplos de Options](src/main/scala/ejemplos_basicos/OptionExample.scala)
+- [Ejemplos de Type Alias](src/main/scala/ejemplos_basicos/TypeAliasExample.scala)
+- [Ejemplos de Clases](src/main/scala/ejemplos_basicos/CaseClassExample.scala)
+- [Ejemplos de Colecciones](src/main/scala/ejemplos_basicos/CollectionsExample.scala)
+- [Ejemplos de tratamiento de errores](src/main/scala/ejemplos_basicos/ErrorsExample.scala)
+- [Ejemplos de Traits](src/main/scala/ejemplos_basicos/TraitsExample.scala)
+
+## Semana 2: Introducción a la Programación en Apache Spark con Scala
+
+### Actividades Destacadas
+
+- ...
+- ...
+
+### Ejemplos de Código
+
+- [Ejemplo Primera App Spark](src/main/scala/spark/SparkSessionExample.scala)
+- ...
 
 
 

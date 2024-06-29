@@ -1,3 +1,5 @@
+package ejemplos_basicos
+
 object ErrorsExample {
 
   // Ejemplo 1: Manejo de errores con try-catch-finally
