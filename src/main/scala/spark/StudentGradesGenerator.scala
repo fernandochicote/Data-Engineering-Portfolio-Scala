@@ -7,13 +7,13 @@ import scala.util.Random
 
 object StudentGradesGenerator extends App {
 
-  // Inicializa SparkSession
+  // Sesion de Spark
   val spark = SparkSession.builder
     .appName("StudentGradesGenerator")
     .master("local[*]")
     .getOrCreate()
 
-  // Define el esquema del DataFrame
+  // Esquema del dataframe
   val schema = StructType(List(
     StructField("student_id", IntegerType, nullable = false),
     StructField("student_name", StringType, nullable = false),
@@ -22,7 +22,7 @@ object StudentGradesGenerator extends App {
     StructField("grade_description", StringType, nullable = false) // Añadido grade_description
   ))
 
-  // Lista de nombres de alumnos
+  // Lista de alumnos y asignaturas
   val studentNames = List("Fernando", "Mario", "Rafael", "Beatriz", "Soufian", "Daniel", "Guillermo", "Alberto")
   val subjects = List("Bases de datos", "SQL", "Python", "Spark", "Scala", "NoSQL", "Hadoop")
 
@@ -34,7 +34,7 @@ object StudentGradesGenerator extends App {
     else "Sobresaliente"
   }
 
-  // Genera datos aleatorios
+  // Genera datos aleatorios y la nota
   val random = new Random()
   val data = for {
     studentId <- 1 to studentNames.length
@@ -46,20 +46,17 @@ object StudentGradesGenerator extends App {
     Row(studentId, studentName, subject, grade, gradeDescription)
   }
 
-  // Crea el DataFrame
+  // Creacion del dataframe
   val rdd = spark.sparkContext.parallelize(data)
   val df = spark.createDataFrame(rdd, schema)
 
-  // Escribe el DataFrame en formato JSON
-  val outputPath = "data/datagen/student_grades"
-  df.write.json(outputPath)
+  // Guardado en formato JSON
+  df.write.json(Config.jsonPath)
 
-  // Lee el DataFrame desde el fichero JSON
-  val readDf = spark.read.json(outputPath)
+  // Lectura del fichero
+  val readDf = spark.read.json(Config.jsonPath)
 
-  // Muestra el DataFrame leído
   readDf.show()
 
-  // Detiene SparkSession
   spark.stop()
 }

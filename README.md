@@ -28,13 +28,18 @@
 
 ### Actividades Destacadas
 
-- ...
-- ...
+- Desarrollo de aplicaciones con Apache Spark (conceptos y ventajas)
+- Introducción al módulo Spark Core (RDD, transformaciones, acciones)
+- Ejemplo de programa usando Spark Core
+- Introducción al módulo Spark SQL (DataFrames, consultas SQL)
+- Ejemplo de programa usando Spark SQL
 
 ### Ejemplos de Código
 
 - [Ejemplo Primera App Spark](src/main/scala/spark/SparkSessionExample.scala)
-- ...
+- [Ejemplo Generador de Datos](src/main/scala/spark/StudentGradesGenerator.scala)
+- [Ejemplo Queries Simples en Spark](src/main/scala/spark/SparkSQLExample.scala)
+- [Ejemplo de Funciones Window en Spark](src/main/scala/spark/SparkWindowExample.scala)
 
 
 
