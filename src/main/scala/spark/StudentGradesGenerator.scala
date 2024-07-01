@@ -13,6 +13,9 @@ object StudentGradesGenerator extends App {
     .master("local[*]")
     .getOrCreate()
 
+  spark.sparkContext.setLogLevel("FATAL")
+
+
   // Esquema del dataframe
   val schema = StructType(List(
     StructField("student_id", IntegerType, nullable = false),
