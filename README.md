@@ -33,6 +33,10 @@
 - Ejemplo de programa usando Spark Core
 - Introducción al módulo Spark SQL (DataFrames, consultas SQL)
 - Ejemplo de programa usando Spark SQL
+- Formatos de serializacion de datos (Parquet, AVRO, Delta Lake, etc)
+- Funciones OLAP (Window, Rollup, Grouping Sets)
+- Particionado y bucketing
+- Datasets en Spark
 
 ### Ejemplos de Código
 
@@ -40,6 +44,9 @@
 - [Ejemplo Generador de Datos](src/main/scala/spark/StudentGradesGenerator.scala)
 - [Ejemplo Queries Simples en Spark](src/main/scala/spark/SparkSQLExample.scala)
 - [Ejemplo de Funciones Window en Spark](src/main/scala/spark/SparkWindowExample.scala)
+- [Ejemplo Roll Up](src/main/scala/spark/SparkRollUpExample.scala)
+- [Ejemplo Particionado y Bucketing](src/main/scala/spark/PartitioningBucketingExample.scala)
+- [Ejemplo Datasets](src/main/scala/spark/CarDatasetExample.scala)
 
 
 
