@@ -23,18 +23,18 @@ object SparkRollUpExample extends App {
   // Calculo de ambas formas de medias por asignatura y alumno dejando la nota individual de cada alumno por asignatura
 
   // Grouping sets
-  val query_gs = """
+  val queryGs = """
                   SELECT student_name, subject ,AVG(grade) AS average_grade
                   FROM student_grades
                   GROUP BY GROUPING SETS ((student_name), (subject), (student_name, subject))
                   """
-  val df_gs = spark.sql(query_gs)
-  df_gs.show()
+  val dfGs = spark.sql(queryGs)
+  dfGs.show()
 
   // Rollup
-  val df_roll = df.rollup("subject", "student_name")
+  val dfRoll = df.rollup("subject", "student_name")
     .agg(avg("grade").alias("average_grade"))
-  df_roll.show()
+  dfRoll.show()
 
   // Detiene SparkSession
   spark.stop()
