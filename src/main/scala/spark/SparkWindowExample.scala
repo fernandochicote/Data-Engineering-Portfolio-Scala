@@ -20,16 +20,17 @@ object SparkWindowExample extends App {
   df.printSchema()
 
   // Definicion de las ventanas
-  val window_media = Window.partitionBy("student_id")
-  val window_rank = Window.partitionBy("student_id").orderBy(desc("grade"))
+  val colPartition = "student_id"
+  val windowMedia = Window.partitionBy(colPartition)
+  val windowRank = Window.partitionBy(colPartition).orderBy(desc("grade"))
 
   // Nota media del estudiante
-  val df_media = df.withColumn("nota_media", avg("grade").over(window_media))
-  df_media.show()
+  val dfMedia = df.withColumn("nota_media", avg("grade").over(windowMedia))
+  dfMedia.show()
 
   // Ranking de notas para cada estudiante
-  val df_rank = df.withColumn("rank", rank().over(window_rank))
-  df_rank.show()
+  val dfRank = df.withColumn("rank", rank().over(windowRank))
+  dfRank.show()
 
   // Detiene SparkSession
   spark.stop()

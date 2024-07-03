@@ -5,6 +5,20 @@ import org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerT
 import org.apache.spark.sql.Row
 import scala.util.Random
 
+object StudentGradesFunctions {
+  // Una implementación alternativa de la función getGradeDescription más funcional
+  def getGradeDescriptionV2(grade: Double): String = {
+    grade match {
+      case g if g < 5 => "Suspenso"
+      case g if g < 7 => "Aprobado"
+      case g if g < 9 => "Notable"
+      case g if g < 10 => "Sobresaliente"
+      case g if g == 10 => "Matrícula de Honor"
+      case _ => "Nota no válida"
+    }
+  }
+}
+
 object StudentGradesGenerator extends App {
 
   // Sesion de Spark
@@ -36,6 +50,7 @@ object StudentGradesGenerator extends App {
     else if (grade < 9) "Notable"
     else "Sobresaliente"
   }
+
 
   // Genera datos aleatorios y la nota
   val random = new Random()
