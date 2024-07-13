@@ -2,15 +2,11 @@ package spark
 
 import org.apache.spark.sql.{SparkSession, DataFrame}
 
-object PartitioningBucketingExample extends App {
+object PartitioningBucketingExample extends App with SparkSessionProvider {
 
-  val spark: SparkSession = SparkSession.builder
-    .appName("PartitioningBucketingExample")
-    .master("local[*]")
-    .getOrCreate()
+  override def appName: String = "PartitioningBucketingExample"
 
-  spark.sparkContext.setLogLevel("FATAL")
-
+  override def logLevel: String = "FATAL"
 
   // Leer la tabla JSON y aplicar particionado y bucketing
   try {
@@ -48,5 +44,6 @@ object PartitioningBucketingExample extends App {
     // Detener la sesión Spark al finalizar
     spark.stop()
   }
+
 }
 

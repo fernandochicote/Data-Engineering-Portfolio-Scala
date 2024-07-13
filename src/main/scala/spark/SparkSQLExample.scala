@@ -3,41 +3,56 @@ package spark
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions._
 
-object SparkSQLExample extends App {
+class DataFrameProcessor(spark: SparkSession) {
+  def filterGradesAbove7(df: DataFrame): DataFrame = {
+    df.filter(col("grade") > 7)
+  }
 
-  // Sesion de Spark
-  val spark = SparkSession.builder
-    .appName("SparkSQLExample")
-    .master("local[*]")
-    .getOrCreate()
+  def calculateAverageGradeBySubject(df: DataFrame): DataFrame = {
+    df.groupBy("subject")
+      .agg(avg("grade").alias("average_grade"))
+  }
 
-  spark.sparkContext.setLogLevel("FATAL")
+  def addExtraGrades(df: DataFrame): DataFrame = {
+    df.withColumn("grade_with_extra", col("grade") + 0.5)
+  }
 
-  // Lectura del DF desde un fichero JSON
+  def countStudentsPerGradeDescription(df: DataFrame): DataFrame = {
+    df.groupBy("grade_description")
+      .agg(count("student_id").alias("count"))
+  }
+}
+
+object SparkSQLExample extends App with SparkSessionProvider {
+
+  override def appName: String = "SparkSQLExample"
+  override def logLevel: String = "FATAL"
+
+    // Reading the DF from a JSON file
   val df = spark.read.json(Config.jsonPath)
   df.show()
 
-  // Mostrar el esquema del DataFrame
+  // Show the DataFrame schema
   df.printSchema()
 
-  // Ejemplo 1: Filtrar alumnos que han obtenido una nota superior a 7
-  val dfSup7 = df.filter(col("grade") > 7)
+  // Processor instance
+  val processor = new DataFrameProcessor(spark)
+
+  // Example 1: Filter students who have obtained a grade above 7
+  val dfSup7 = processor.filterGradesAbove7(df)
   dfSup7.show()
 
-  // Ejemplo 2: Calcular la nota media por asignatura
-  val dfMedias = df.groupBy("subject")
-    .agg(avg("grade").alias("average_grade"))
+  // Example 2: Calculate the average grade by subject
+  val dfMedias = processor.calculateAverageGradeBySubject(df)
   dfMedias.show()
 
-  // Ejemplo 3: Añadir una nueva columna con puntos extra
-  val dfExtra = df.withColumn("grade_with_extra", col("grade") + 0.5)
+  // Example 3: Add a new column with extra points
+  val dfExtra = processor.addExtraGrades(df)
   dfExtra.show()
 
-  // Ejemplo 4: Contar el número de estudiantes con cada nota
-  val dfNumGrades = df.groupBy("grade_description")
-    .agg(count("student_id").alias("count"))
+  // Example 4: Count the number of students with each grade description
+  val dfNumGrades = processor.countStudentsPerGradeDescription(df)
   dfNumGrades.show()
 
   spark.stop()
 }
-
