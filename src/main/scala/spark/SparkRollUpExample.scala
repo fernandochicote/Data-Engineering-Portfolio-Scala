@@ -1,16 +1,11 @@
 package spark
 
-import org.apache.spark.sql.{SparkSession, DataFrame}
 import org.apache.spark.sql.functions._
 
-object SparkRollUpExample extends App {
+object SparkRollUpExample extends App with SparkSessionProvider {
 
-  val spark = SparkSession.builder
-    .appName("SparkRollUpExample")
-    .master("local[*]")
-    .getOrCreate()
-
-  spark.sparkContext.setLogLevel("FATAL")
+  override def appName: String = "SparkRollUpExample"
+  override def logLevel: String = "FATAL"
 
   val df = spark.read.json(Config.jsonPath)
 
